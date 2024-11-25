@@ -2,8 +2,8 @@
 
 ## Overview
 
-![model architectures](figs/overview.png)
-![model architectures](figs/flowchart.png)
+<img src="figs/overview.png" alt="model architecture" width="1000" style="display: block; margin-bottom: 100px;">
+
 
 The figure shows the architectures of  our MAPLE-Net approaches for MSA tasks. 
 
