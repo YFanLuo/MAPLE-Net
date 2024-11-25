@@ -1,0 +1,816 @@
+nohup: ignoring input
+/opt/data/private/work1/models/maple/clip/clip.py:23: UserWarning: PyTorch version 1.7.1 or higher is recommended
+  warnings.warn("PyTorch version 1.7.1 or higher is recommended")
+/root/anaconda3/envs/maple/lib/python3.10/site-packages/transformers/tokenization_utils_base.py:1617: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Loaded 3179 samples from data/IJCAI2019_data/twitter2015/train.tsv
+Loaded 1122 samples from data/IJCAI2019_data/twitter2015/dev.tsv
+Loaded 1037 samples from data/IJCAI2019_data/twitter2015/test.tsv
+Loaded 3562 samples from data/IJCAI2019_data/twitter2017/train.tsv
+Loaded 1176 samples from data/IJCAI2019_data/twitter2017/dev.tsv
+Loaded 1234 samples from data/IJCAI2019_data/twitter2017/test.tsv
+Loaded 148 samples from datasets/masad/train_few1.tsv
+Loaded 148 samples from datasets/masad/dev_few2.tsv
+Loaded 148 samples from datasets/masad/dev_few1.tsv
+Loaded 3224 samples from datasets/mvsa-s/train.tsv
+Loaded 403 samples from datasets/mvsa-s/dev.tsv
+Loaded 408 samples from datasets/mvsa-s/test.tsv
+Loaded 12904 samples from datasets/mvsa-m/train.tsv
+Loaded 1613 samples from datasets/mvsa-m/dev.tsv
+Loaded 1616 samples from datasets/mvsa-m/test.tsv
+Loaded 497 samples from datasets/tumemo/train_few2.tsv
+Loaded 497 samples from datasets/tumemo/dev_few2.tsv
+Loaded 497 samples from datasets/tumemo/dev_few1.tsv
+Initializing feature bank...
+Building feature bank from training data...
+Extracting features:   0%|          | 0/3 [00:00<?, ?it/s]2024-11-19 06:31:46.670162: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-11-19 06:31:46.683829: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-11-19 06:31:46.687932: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-11-19 06:31:46.701383: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-11-19 06:31:47.523769: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Extracting features:   0%|          | 0/3 [00:24<?, ?it/s, Features=64, Memory=2625.2MB]Extracting features:  33%|███▎      | 1/3 [00:24<00:48, 24.41s/it, Features=64, Memory=2625.2MB]Extracting features:  33%|███▎      | 1/3 [01:48<00:48, 24.41s/it, Features=128, Memory=2626.7MB]Extracting features:  67%|██████▋   | 2/3 [01:48<00:59, 59.27s/it, Features=128, Memory=2626.7MB]Extracting features:  67%|██████▋   | 2/3 [02:03<00:59, 59.27s/it, Features=60, Memory=2626.7MB] Extracting features: 100%|██████████| 3/3 [02:03<00:00, 39.18s/it, Features=60, Memory=2626.7MB]Extracting features: 100%|██████████| 3/3 [02:03<00:00, 41.12s/it, Features=60, Memory=2626.7MB]
+
+Concatenating features...
+Building label indices...
+Feature bank built successfully with 148 samples
+Class 0: 74 samples
+Class 1: 74 samples
+Epoch 1/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 1/40 [Train]:   0%|          | 0/3 [00:19<?, ?it/s, loss=0.7355]Epoch 1/40 [Train]:  33%|███▎      | 1/3 [00:19<00:39, 19.94s/it, loss=0.7355]Epoch 1/40 [Train]:  33%|███▎      | 1/3 [00:55<00:39, 19.94s/it, loss=0.7249]Epoch 1/40 [Train]:  67%|██████▋   | 2/3 [00:55<00:29, 29.39s/it, loss=0.7249]Epoch 1/40 [Train]:  67%|██████▋   | 2/3 [01:31<00:29, 29.39s/it, loss=0.7213]Epoch 1/40 [Train]: 100%|██████████| 3/3 [01:31<00:00, 32.32s/it, loss=0.7213]Epoch 1/40 [Train]: 100%|██████████| 3/3 [01:31<00:00, 30.58s/it, loss=0.7213]
+Initializing LLaMA model...
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:25<01:15, 25.33s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:49<00:49, 24.89s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [01:14<00:24, 24.63s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:20<00:00, 17.48s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:20<00:00, 20.19s/it]
+Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [01:07<2:45:09]Processing MASAD samples:   1%|▏         | 2/148 samples [01:21<1:27:43]Processing MASAD samples:   2%|▏         | 3/148 samples [01:22<48:27]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:22<1:06:28]
+
+Epoch 1 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|       1 |       0.7272 | Validation     | MASAD     |       0.527  |      0.5405 |            0.5163 |           0.532  |               0.5163 |              0.532  |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       1 |       0.7272 | Test           | MASAD     |       0.4595 |      0.4865 |            0.4394 |           0.4726 |               0.4394 |              0.4726 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+
+New best model saved! (Epoch 1, Accuracy: 0.5270)
+Epoch 2/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 2/40 [Train]:   0%|          | 0/3 [00:15<?, ?it/s, loss=0.6977]Epoch 2/40 [Train]:  33%|███▎      | 1/3 [00:15<00:30, 15.05s/it, loss=0.6977]Epoch 2/40 [Train]:  33%|███▎      | 1/3 [00:39<00:30, 15.05s/it, loss=0.7074]Epoch 2/40 [Train]:  67%|██████▋   | 2/3 [00:39<00:20, 20.74s/it, loss=0.7074]Epoch 2/40 [Train]:  67%|██████▋   | 2/3 [01:04<00:20, 20.74s/it, loss=0.6434]Epoch 2/40 [Train]: 100%|██████████| 3/3 [01:04<00:00, 22.66s/it, loss=0.6434]Epoch 2/40 [Train]: 100%|██████████| 3/3 [01:04<00:00, 21.57s/it, loss=0.6434]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:33<1:23:11]Processing MASAD samples:   1%|▏         | 2/148 samples [00:44<49:02]  Processing MASAD samples:   2%|▏         | 3/148 samples [00:45<27:21]Processing MASAD samples:   2%|▏         | 3/148 samples [00:45<36:27]
+
+Epoch 2 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|       2 |       0.6828 | Validation     | MASAD     |       0.4932 |      0.5338 |            0.3895 |           0.4591 |               0.3895 |              0.4591 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       2 |       0.6828 | Test           | MASAD     |       0.4932 |      0.5068 |            0.3626 |           0.4058 |               0.3626 |              0.4058 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 3/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 3/40 [Train]:   0%|          | 0/3 [00:25<?, ?it/s, loss=0.6676]Epoch 3/40 [Train]:  33%|███▎      | 1/3 [00:25<00:50, 25.45s/it, loss=0.6676]Epoch 3/40 [Train]:  33%|███▎      | 1/3 [01:28<00:50, 25.45s/it, loss=0.6550]Epoch 3/40 [Train]:  67%|██████▋   | 2/3 [01:28<00:47, 47.48s/it, loss=0.6550]Epoch 3/40 [Train]:  67%|██████▋   | 2/3 [01:52<00:47, 47.48s/it, loss=0.6181]Epoch 3/40 [Train]: 100%|██████████| 3/3 [01:52<00:00, 36.82s/it, loss=0.6181]Epoch 3/40 [Train]: 100%|██████████| 3/3 [01:52<00:00, 37.50s/it, loss=0.6181]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:02<07:17]Processing MASAD samples:   1%|▏         | 2/148 samples [00:06<07:51]Processing MASAD samples:   2%|▏         | 3/148 samples [00:09<07:26]Processing MASAD samples:   2%|▏         | 3/148 samples [00:09<07:28]
+
+Epoch 3 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|       3 |       0.6469 | Validation     | MASAD     |       0.5473 |      0.5473 |            0.5056 |           0.5097 |               0.5056 |              0.5097 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       3 |       0.6469 | Test           | MASAD     |       0.527  |      0.5541 |            0.4661 |           0.5108 |               0.4661 |              0.5108 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+
+New best model saved! (Epoch 3, Accuracy: 0.5473)
+Epoch 4/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 4/40 [Train]:   0%|          | 0/3 [00:54<?, ?it/s, loss=0.6139]Epoch 4/40 [Train]:  33%|███▎      | 1/3 [00:54<01:48, 54.04s/it, loss=0.6139]Epoch 4/40 [Train]:  33%|███▎      | 1/3 [01:21<01:48, 54.04s/it, loss=0.5902]Epoch 4/40 [Train]:  67%|██████▋   | 2/3 [01:21<00:38, 38.23s/it, loss=0.5902]Epoch 4/40 [Train]:  67%|██████▋   | 2/3 [01:24<00:38, 38.23s/it, loss=0.5275]Epoch 4/40 [Train]: 100%|██████████| 3/3 [01:24<00:00, 22.39s/it, loss=0.5275]Epoch 4/40 [Train]: 100%|██████████| 3/3 [01:24<00:00, 28.25s/it, loss=0.5275]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:34<1:23:30]Processing MASAD samples:   1%|▏         | 2/148 samples [01:00<1:11:30]Processing MASAD samples:   2%|▏         | 3/148 samples [01:18<58:20]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:18<1:02:53]
+
+Epoch 4 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|       4 |       0.5772 | Validation     | MASAD     |       0.6081 |      0.6149 |            0.5913 |           0.5972 |               0.5913 |              0.5972 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       4 |       0.5772 | Test           | MASAD     |       0.5946 |      0.6014 |            0.5747 |           0.5805 |               0.5747 |              0.5805 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+
+New best model saved! (Epoch 4, Accuracy: 0.6081)
+Epoch 5/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 5/40 [Train]:   0%|          | 0/3 [00:13<?, ?it/s, loss=0.5206]Epoch 5/40 [Train]:  33%|███▎      | 1/3 [00:13<00:26, 13.10s/it, loss=0.5206]Epoch 5/40 [Train]:  33%|███▎      | 1/3 [01:02<00:26, 13.10s/it, loss=0.5575]Epoch 5/40 [Train]:  67%|██████▋   | 2/3 [01:02<00:34, 34.33s/it, loss=0.5575]Epoch 5/40 [Train]:  67%|██████▋   | 2/3 [01:28<00:34, 34.33s/it, loss=0.5508]Epoch 5/40 [Train]: 100%|██████████| 3/3 [01:28<00:00, 30.68s/it, loss=0.5508]Epoch 5/40 [Train]: 100%|██████████| 3/3 [01:28<00:00, 29.55s/it, loss=0.5508]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:51<2:05:20]Processing MASAD samples:   1%|▏         | 2/148 samples [01:20<1:33:38]Processing MASAD samples:   2%|▏         | 3/148 samples [01:24<54:36]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:24<1:08:02]
+
+Epoch 5 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|       5 |       0.5429 | Validation     | MASAD     |       0.5946 |      0.6014 |            0.5939 |           0.6005 |               0.5939 |              0.6005 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       5 |       0.5429 | Test           | MASAD     |       0.6486 |      0.6486 |            0.6481 |           0.6476 |               0.6481 |              0.6476 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 6/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 6/40 [Train]:   0%|          | 0/3 [00:14<?, ?it/s, loss=0.4857]Epoch 6/40 [Train]:  33%|███▎      | 1/3 [00:14<00:29, 14.89s/it, loss=0.4857]Epoch 6/40 [Train]:  33%|███▎      | 1/3 [00:45<00:29, 14.89s/it, loss=0.4721]Epoch 6/40 [Train]:  67%|██████▋   | 2/3 [00:45<00:23, 23.91s/it, loss=0.4721]Epoch 6/40 [Train]:  67%|██████▋   | 2/3 [01:14<00:23, 23.91s/it, loss=0.4531]Epoch 6/40 [Train]: 100%|██████████| 3/3 [01:14<00:00, 26.32s/it, loss=0.4531]Epoch 6/40 [Train]: 100%|██████████| 3/3 [01:14<00:00, 24.77s/it, loss=0.4531]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:18<46:05]Processing MASAD samples:   1%|▏         | 2/148 samples [00:22<24:00]Processing MASAD samples:   2%|▏         | 3/148 samples [00:23<13:57]Processing MASAD samples:   2%|▏         | 3/148 samples [00:23<18:46]
+
+Epoch 6 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|       6 |       0.4703 | Validation     | MASAD     |       0.6149 |      0.6216 |            0.5829 |           0.5949 |               0.5829 |              0.5949 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       6 |       0.4703 | Test           | MASAD     |       0.5878 |      0.5946 |            0.5536 |           0.5691 |               0.5536 |              0.5691 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+
+New best model saved! (Epoch 6, Accuracy: 0.6149)
+Epoch 7/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 7/40 [Train]:   0%|          | 0/3 [01:01<?, ?it/s, loss=0.4284]Epoch 7/40 [Train]:  33%|███▎      | 1/3 [01:01<02:02, 61.49s/it, loss=0.4284]Epoch 7/40 [Train]:  33%|███▎      | 1/3 [01:14<02:02, 61.49s/it, loss=0.3909]Epoch 7/40 [Train]:  67%|██████▋   | 2/3 [01:14<00:33, 33.05s/it, loss=0.3909]Epoch 7/40 [Train]:  67%|██████▋   | 2/3 [01:19<00:33, 33.05s/it, loss=0.3473]Epoch 7/40 [Train]: 100%|██████████| 3/3 [01:19<00:00, 20.15s/it, loss=0.3473]Epoch 7/40 [Train]: 100%|██████████| 3/3 [01:19<00:00, 26.48s/it, loss=0.3473]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:26<1:05:10]Processing MASAD samples:   1%|▏         | 2/148 samples [00:37<42:32]  Processing MASAD samples:   2%|▏         | 3/148 samples [00:51<38:24]Processing MASAD samples:   2%|▏         | 3/148 samples [00:51<41:39]
+
+Epoch 7 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|       7 |       0.3889 | Validation     | MASAD     |       0.6216 |      0.6351 |            0.6213 |           0.6345 |               0.6213 |              0.6345 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       7 |       0.3889 | Test           | MASAD     |       0.6622 |      0.6554 |            0.6619 |           0.655  |               0.6619 |              0.655  |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+
+New best model saved! (Epoch 7, Accuracy: 0.6216)
+Epoch 8/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 8/40 [Train]:   0%|          | 0/3 [00:29<?, ?it/s, loss=0.3223]Epoch 8/40 [Train]:  33%|███▎      | 1/3 [00:29<00:59, 29.91s/it, loss=0.3223]Epoch 8/40 [Train]:  33%|███▎      | 1/3 [02:03<00:59, 29.91s/it, loss=0.3244]Epoch 8/40 [Train]:  67%|██████▋   | 2/3 [02:03<01:07, 67.53s/it, loss=0.3244]Epoch 8/40 [Train]:  67%|██████▋   | 2/3 [02:09<01:07, 67.53s/it, loss=0.2954]Epoch 8/40 [Train]: 100%|██████████| 3/3 [02:09<00:00, 39.11s/it, loss=0.2954]Epoch 8/40 [Train]: 100%|██████████| 3/3 [02:09<00:00, 43.02s/it, loss=0.2954]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:02<06:13]Processing MASAD samples:   1%|▏         | 2/148 samples [00:05<06:16]Processing MASAD samples:   2%|▏         | 3/148 samples [00:05<04:16]Processing MASAD samples:   2%|▏         | 3/148 samples [00:05<04:47]
+
+Epoch 8 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|       8 |       0.3141 | Validation     | MASAD     |       0.6284 |      0.6351 |            0.6275 |           0.6345 |               0.6275 |              0.6345 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       8 |       0.3141 | Test           | MASAD     |       0.6757 |      0.6757 |            0.6754 |           0.6756 |               0.6754 |              0.6756 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+
+New best model saved! (Epoch 8, Accuracy: 0.6284)
+Epoch 9/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 9/40 [Train]:   0%|          | 0/3 [01:29<?, ?it/s, loss=0.2374]Epoch 9/40 [Train]:  33%|███▎      | 1/3 [01:29<02:59, 89.66s/it, loss=0.2374]Epoch 9/40 [Train]:  33%|███▎      | 1/3 [01:47<02:59, 89.66s/it, loss=0.2296]Epoch 9/40 [Train]:  67%|██████▋   | 2/3 [01:47<00:47, 47.24s/it, loss=0.2296]Epoch 9/40 [Train]:  67%|██████▋   | 2/3 [01:51<00:47, 47.24s/it, loss=0.2168]Epoch 9/40 [Train]: 100%|██████████| 3/3 [01:51<00:00, 27.64s/it, loss=0.2168]Epoch 9/40 [Train]: 100%|██████████| 3/3 [01:51<00:00, 37.17s/it, loss=0.2168]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:50<2:04:52]Processing MASAD samples:   1%|▏         | 2/148 samples [01:41<2:03:13]Processing MASAD samples:   2%|▏         | 3/148 samples [01:50<1:16:51]Processing MASAD samples:   2%|▏         | 3/148 samples [01:50<1:29:13]
+
+Epoch 9 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|       9 |       0.2279 | Validation     | MASAD     |       0.6284 |      0.6351 |            0.6255 |           0.6327 |               0.6255 |              0.6327 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       9 |       0.2279 | Test           | MASAD     |       0.6757 |      0.6824 |            0.6718 |           0.6791 |               0.6718 |              0.6791 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 10/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 10/40 [Train]:   0%|          | 0/3 [00:17<?, ?it/s, loss=0.1794]Epoch 10/40 [Train]:  33%|███▎      | 1/3 [00:17<00:34, 17.39s/it, loss=0.1794]Epoch 10/40 [Train]:  33%|███▎      | 1/3 [00:56<00:34, 17.39s/it, loss=0.1561]Epoch 10/40 [Train]:  67%|██████▋   | 2/3 [00:56<00:30, 30.29s/it, loss=0.1561]Epoch 10/40 [Train]:  67%|██████▋   | 2/3 [01:27<00:30, 30.29s/it, loss=0.1459]Epoch 10/40 [Train]: 100%|██████████| 3/3 [01:27<00:00, 30.45s/it, loss=0.1459]Epoch 10/40 [Train]: 100%|██████████| 3/3 [01:27<00:00, 29.12s/it, loss=0.1459]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:34<1:25:14]Processing MASAD samples:   1%|▏         | 2/148 samples [01:15<1:33:49]Processing MASAD samples:   2%|▏         | 3/148 samples [01:25<1:01:07]Processing MASAD samples:   2%|▏         | 3/148 samples [01:25<1:08:52]
+
+Epoch 10 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      10 |       0.1605 | Validation     | MASAD     |       0.6216 |      0.6216 |            0.6216 |           0.6216 |               0.6216 |              0.6216 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      10 |       0.1605 | Test           | MASAD     |       0.6622 |      0.6622 |            0.6621 |           0.6621 |               0.6621 |              0.6621 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 11/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 11/40 [Train]:   0%|          | 0/3 [01:27<?, ?it/s, loss=0.1113]Epoch 11/40 [Train]:  33%|███▎      | 1/3 [01:27<02:54, 87.41s/it, loss=0.1113]Epoch 11/40 [Train]:  33%|███▎      | 1/3 [02:03<02:54, 87.41s/it, loss=0.1130]Epoch 11/40 [Train]:  67%|██████▋   | 2/3 [02:03<00:57, 57.44s/it, loss=0.1130]Epoch 11/40 [Train]:  67%|██████▋   | 2/3 [02:07<00:57, 57.44s/it, loss=0.1216]Epoch 11/40 [Train]: 100%|██████████| 3/3 [02:07<00:00, 32.92s/it, loss=0.1216]Epoch 11/40 [Train]: 100%|██████████| 3/3 [02:07<00:00, 42.54s/it, loss=0.1216]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:29<1:13:13]Processing MASAD samples:   1%|▏         | 2/148 samples [00:57<1:09:00]Processing MASAD samples:   2%|▏         | 3/148 samples [01:08<49:49]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:08<55:14]
+
+Epoch 11 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      11 |       0.1153 | Validation     | MASAD     |       0.6284 |      0.6216 |            0.6275 |           0.621  |               0.6275 |              0.621  |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      11 |       0.1153 | Test           | MASAD     |       0.6622 |      0.6689 |            0.6612 |           0.6677 |               0.6612 |              0.6677 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 12/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 12/40 [Train]:   0%|          | 0/3 [00:13<?, ?it/s, loss=0.0819]Epoch 12/40 [Train]:  33%|███▎      | 1/3 [00:13<00:26, 13.06s/it, loss=0.0819]Epoch 12/40 [Train]:  33%|███▎      | 1/3 [00:50<00:26, 13.06s/it, loss=0.0679]Epoch 12/40 [Train]:  67%|██████▋   | 2/3 [00:50<00:27, 27.64s/it, loss=0.0679]Epoch 12/40 [Train]:  67%|██████▋   | 2/3 [01:06<00:27, 27.64s/it, loss=0.0617]Epoch 12/40 [Train]: 100%|██████████| 3/3 [01:06<00:00, 22.02s/it, loss=0.0617]Epoch 12/40 [Train]: 100%|██████████| 3/3 [01:06<00:00, 22.08s/it, loss=0.0617]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:03<07:24]Processing MASAD samples:   1%|▏         | 2/148 samples [00:05<06:19]Processing MASAD samples:   2%|▏         | 3/148 samples [00:06<04:17]Processing MASAD samples:   2%|▏         | 3/148 samples [00:06<04:56]
+
+Epoch 12 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      12 |       0.0705 | Validation     | MASAD     |       0.6486 |      0.6486 |            0.6407 |           0.6407 |               0.6407 |              0.6407 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      12 |       0.0705 | Test           | MASAD     |       0.6554 |      0.6689 |            0.6508 |           0.6655 |               0.6508 |              0.6655 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+
+New best model saved! (Epoch 12, Accuracy: 0.6486)
+Epoch 13/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 13/40 [Train]:   0%|          | 0/3 [01:18<?, ?it/s, loss=0.0566]Epoch 13/40 [Train]:  33%|███▎      | 1/3 [01:18<02:36, 78.16s/it, loss=0.0566]Epoch 13/40 [Train]:  33%|███▎      | 1/3 [02:09<02:36, 78.16s/it, loss=0.0515]Epoch 13/40 [Train]:  67%|██████▋   | 2/3 [02:09<01:02, 62.18s/it, loss=0.0515]Epoch 13/40 [Train]:  67%|██████▋   | 2/3 [02:12<01:02, 62.18s/it, loss=0.0443]Epoch 13/40 [Train]: 100%|██████████| 3/3 [02:12<00:00, 35.45s/it, loss=0.0443]Epoch 13/40 [Train]: 100%|██████████| 3/3 [02:12<00:00, 44.26s/it, loss=0.0443]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:37<1:32:40]Processing MASAD samples:   1%|▏         | 2/148 samples [01:03<1:13:59]Processing MASAD samples:   2%|▏         | 3/148 samples [01:03<40:54]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:03<51:30]
+
+Epoch 13 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      13 |       0.0508 | Validation     | MASAD     |       0.6419 |      0.6419 |            0.6415 |           0.6415 |               0.6415 |              0.6415 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      13 |       0.0508 | Test           | MASAD     |       0.6554 |      0.6486 |            0.6554 |           0.6486 |               0.6554 |              0.6486 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 14/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 14/40 [Train]:   0%|          | 0/3 [00:19<?, ?it/s, loss=0.0391]Epoch 14/40 [Train]:  33%|███▎      | 1/3 [00:19<00:39, 19.56s/it, loss=0.0391]Epoch 14/40 [Train]:  33%|███▎      | 1/3 [01:38<00:39, 19.56s/it, loss=0.0359]Epoch 14/40 [Train]:  67%|██████▋   | 2/3 [01:38<00:54, 54.38s/it, loss=0.0359]Epoch 14/40 [Train]:  67%|██████▋   | 2/3 [01:54<00:54, 54.38s/it, loss=0.0374]Epoch 14/40 [Train]: 100%|██████████| 3/3 [01:54<00:00, 36.89s/it, loss=0.0374]Epoch 14/40 [Train]: 100%|██████████| 3/3 [01:54<00:00, 38.13s/it, loss=0.0374]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:03<08:47]Processing MASAD samples:   1%|▏         | 2/148 samples [00:07<09:02]Processing MASAD samples:   2%|▏         | 3/148 samples [00:08<05:45]Processing MASAD samples:   2%|▏         | 3/148 samples [00:08<06:36]
+
+Epoch 14 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      14 |       0.0375 | Validation     | MASAD     |       0.6149 |      0.6149 |            0.6109 |           0.6097 |               0.6109 |              0.6097 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      14 |       0.0375 | Test           | MASAD     |       0.5946 |      0.5743 |            0.5898 |           0.5672 |               0.5898 |              0.5672 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 15/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 15/40 [Train]:   0%|          | 0/3 [01:10<?, ?it/s, loss=0.0336]Epoch 15/40 [Train]:  33%|███▎      | 1/3 [01:10<02:20, 70.39s/it, loss=0.0336]Epoch 15/40 [Train]:  33%|███▎      | 1/3 [01:21<02:20, 70.39s/it, loss=0.0309]Epoch 15/40 [Train]:  67%|██████▋   | 2/3 [01:21<00:35, 35.77s/it, loss=0.0309]Epoch 15/40 [Train]:  67%|██████▋   | 2/3 [01:25<00:35, 35.77s/it, loss=0.0277]Epoch 15/40 [Train]: 100%|██████████| 3/3 [01:25<00:00, 21.22s/it, loss=0.0277]Epoch 15/40 [Train]: 100%|██████████| 3/3 [01:25<00:00, 28.61s/it, loss=0.0277]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:27<1:07:01]Processing MASAD samples:   1%|▏         | 2/148 samples [01:06<1:23:14]Processing MASAD samples:   2%|▏         | 3/148 samples [01:16<56:10]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:16<1:01:40]
+
+Epoch 15 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      15 |       0.0308 | Validation     | MASAD     |       0.6284 |      0.6351 |            0.6275 |           0.6341 |               0.6275 |              0.6341 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      15 |       0.0308 | Test           | MASAD     |       0.6149 |      0.6081 |            0.6134 |           0.6063 |               0.6134 |              0.6063 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 16/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 16/40 [Train]:   0%|          | 0/3 [00:16<?, ?it/s, loss=0.0280]Epoch 16/40 [Train]:  33%|███▎      | 1/3 [00:16<00:32, 16.07s/it, loss=0.0280]Epoch 16/40 [Train]:  33%|███▎      | 1/3 [01:29<00:32, 16.07s/it, loss=0.0264]Epoch 16/40 [Train]:  67%|██████▋   | 2/3 [01:29<00:49, 49.56s/it, loss=0.0264]Epoch 16/40 [Train]:  67%|██████▋   | 2/3 [02:01<00:49, 49.56s/it, loss=0.0244]Epoch 16/40 [Train]: 100%|██████████| 3/3 [02:01<00:00, 41.72s/it, loss=0.0244]Epoch 16/40 [Train]: 100%|██████████| 3/3 [02:01<00:00, 40.49s/it, loss=0.0244]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:03<08:33]Processing MASAD samples:   1%|▏         | 2/148 samples [00:08<10:22]Processing MASAD samples:   2%|▏         | 3/148 samples [00:09<06:55]Processing MASAD samples:   2%|▏         | 3/148 samples [00:09<07:39]
+
+Epoch 16 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      16 |       0.0263 | Validation     | MASAD     |       0.6486 |      0.6486 |            0.6476 |           0.6476 |               0.6476 |              0.6476 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      16 |       0.0263 | Test           | MASAD     |       0.6216 |      0.6284 |            0.621  |           0.628  |               0.621  |              0.628  |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 17/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 17/40 [Train]:   0%|          | 0/3 [01:17<?, ?it/s, loss=0.0247]Epoch 17/40 [Train]:  33%|███▎      | 1/3 [01:17<02:34, 77.16s/it, loss=0.0247]Epoch 17/40 [Train]:  33%|███▎      | 1/3 [01:33<02:34, 77.16s/it, loss=0.0235]Epoch 17/40 [Train]:  67%|██████▋   | 2/3 [01:33<00:41, 41.34s/it, loss=0.0235]Epoch 17/40 [Train]:  67%|██████▋   | 2/3 [01:46<00:41, 41.34s/it, loss=0.0229]Epoch 17/40 [Train]: 100%|██████████| 3/3 [01:46<00:00, 28.38s/it, loss=0.0229]Epoch 17/40 [Train]: 100%|██████████| 3/3 [01:46<00:00, 35.46s/it, loss=0.0229]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:23<57:39]Processing MASAD samples:   1%|▏         | 2/148 samples [01:06<1:24:41]Processing MASAD samples:   2%|▏         | 3/148 samples [01:11<51:07]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:11<57:18]
+
+Epoch 17 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      17 |       0.0237 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      17 |       0.0237 | Test           | MASAD     |       0.6419 |      0.6419 |            0.6345 |           0.6359 |               0.6345 |              0.6359 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 18/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 18/40 [Train]:   0%|          | 0/3 [00:23<?, ?it/s, loss=0.0226]Epoch 18/40 [Train]:  33%|███▎      | 1/3 [00:23<00:46, 23.33s/it, loss=0.0226]Epoch 18/40 [Train]:  33%|███▎      | 1/3 [02:03<00:46, 23.33s/it, loss=0.0227]Epoch 18/40 [Train]:  67%|██████▋   | 2/3 [02:03<01:08, 68.53s/it, loss=0.0227]Epoch 18/40 [Train]:  67%|██████▋   | 2/3 [02:13<01:08, 68.53s/it, loss=0.0216]Epoch 18/40 [Train]: 100%|██████████| 3/3 [02:13<00:00, 41.98s/it, loss=0.0216]Epoch 18/40 [Train]: 100%|██████████| 3/3 [02:13<00:00, 44.63s/it, loss=0.0216]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:04<11:03]Processing MASAD samples:   1%|▏         | 2/148 samples [00:07<08:57]Processing MASAD samples:   2%|▏         | 3/148 samples [00:08<05:56]Processing MASAD samples:   2%|▏         | 3/148 samples [00:08<06:56]
+
+Epoch 18 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      18 |       0.0223 | Validation     | MASAD     |       0.6554 |      0.6622 |            0.6453 |           0.653  |               0.6453 |              0.653  |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      18 |       0.0223 | Test           | MASAD     |       0.6351 |      0.6351 |            0.6253 |           0.6269 |               0.6253 |              0.6269 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+
+New best model saved! (Epoch 18, Accuracy: 0.6554)
+Epoch 19/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 19/40 [Train]:   0%|          | 0/3 [01:24<?, ?it/s, loss=0.0215]Epoch 19/40 [Train]:  33%|███▎      | 1/3 [01:24<02:48, 84.04s/it, loss=0.0215]Epoch 19/40 [Train]:  33%|███▎      | 1/3 [01:36<02:48, 84.04s/it, loss=0.0217]Epoch 19/40 [Train]:  67%|██████▋   | 2/3 [01:36<00:41, 41.96s/it, loss=0.0217]Epoch 19/40 [Train]:  67%|██████▋   | 2/3 [01:40<00:41, 41.96s/it, loss=0.0213]Epoch 19/40 [Train]: 100%|██████████| 3/3 [01:40<00:00, 24.39s/it, loss=0.0213]Epoch 19/40 [Train]: 100%|██████████| 3/3 [01:40<00:00, 33.35s/it, loss=0.0213]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:37<1:30:43]Processing MASAD samples:   1%|▏         | 2/148 samples [01:06<1:19:19]Processing MASAD samples:   2%|▏         | 3/148 samples [01:17<55:16]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:17<1:02:41]
+
+Epoch 19 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      19 |       0.0215 | Validation     | MASAD     |       0.6554 |      0.6554 |            0.6435 |           0.6435 |               0.6435 |              0.6435 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      19 |       0.0215 | Test           | MASAD     |       0.6284 |      0.6351 |            0.6175 |           0.6269 |               0.6175 |              0.6269 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 20/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 20/40 [Train]:   0%|          | 0/3 [00:11<?, ?it/s, loss=0.0210]Epoch 20/40 [Train]:  33%|███▎      | 1/3 [00:11<00:22, 11.05s/it, loss=0.0210]Epoch 20/40 [Train]:  33%|███▎      | 1/3 [01:32<00:22, 11.05s/it, loss=0.0205]Epoch 20/40 [Train]:  67%|██████▋   | 2/3 [01:32<00:52, 52.72s/it, loss=0.0205]Epoch 20/40 [Train]:  67%|██████▋   | 2/3 [02:05<00:52, 52.72s/it, loss=0.0206]Epoch 20/40 [Train]: 100%|██████████| 3/3 [02:05<00:00, 43.34s/it, loss=0.0206]Epoch 20/40 [Train]: 100%|██████████| 3/3 [02:05<00:00, 41.71s/it, loss=0.0206]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:02<05:57]Processing MASAD samples:   1%|▏         | 2/148 samples [00:05<06:26]Processing MASAD samples:   2%|▏         | 3/148 samples [00:06<04:41]Processing MASAD samples:   2%|▏         | 3/148 samples [00:06<05:06]
+
+Epoch 20 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      20 |       0.0207 | Validation     | MASAD     |       0.6284 |      0.6351 |            0.6207 |           0.6283 |               0.6207 |              0.6283 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      20 |       0.0207 | Test           | MASAD     |       0.6284 |      0.6284 |            0.6175 |           0.6192 |               0.6175 |              0.6192 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 21/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 21/40 [Train]:   0%|          | 0/3 [00:18<?, ?it/s, loss=0.0199]Epoch 21/40 [Train]:  33%|███▎      | 1/3 [00:18<00:37, 18.63s/it, loss=0.0199]Epoch 21/40 [Train]:  33%|███▎      | 1/3 [01:30<00:37, 18.63s/it, loss=0.0201]Epoch 21/40 [Train]:  67%|██████▋   | 2/3 [01:30<00:49, 49.98s/it, loss=0.0201]Epoch 21/40 [Train]:  67%|██████▋   | 2/3 [01:55<00:49, 49.98s/it, loss=0.0196]Epoch 21/40 [Train]: 100%|██████████| 3/3 [01:55<00:00, 38.38s/it, loss=0.0196]Epoch 21/40 [Train]: 100%|██████████| 3/3 [01:55<00:00, 38.37s/it, loss=0.0196]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:03<07:29]Processing MASAD samples:   1%|▏         | 2/148 samples [00:05<07:13]Processing MASAD samples:   2%|▏         | 3/148 samples [00:06<04:46]Processing MASAD samples:   2%|▏         | 3/148 samples [00:06<05:26]
+
+Epoch 21 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      21 |       0.0199 | Validation     | MASAD     |       0.6284 |      0.6284 |            0.6234 |           0.6234 |               0.6234 |              0.6234 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      21 |       0.0199 | Test           | MASAD     |       0.6284 |      0.6284 |            0.6192 |           0.6207 |               0.6192 |              0.6207 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 22/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 22/40 [Train]:   0%|          | 0/3 [01:30<?, ?it/s, loss=0.0194]Epoch 22/40 [Train]:  33%|███▎      | 1/3 [01:30<03:01, 90.64s/it, loss=0.0194]Epoch 22/40 [Train]:  33%|███▎      | 1/3 [02:13<03:01, 90.64s/it, loss=0.0194]Epoch 22/40 [Train]:  67%|██████▋   | 2/3 [02:13<01:02, 62.63s/it, loss=0.0194]Epoch 22/40 [Train]:  67%|██████▋   | 2/3 [02:43<01:02, 62.63s/it, loss=0.0185]Epoch 22/40 [Train]: 100%|██████████| 3/3 [02:43<00:00, 47.73s/it, loss=0.0185]Epoch 22/40 [Train]: 100%|██████████| 3/3 [02:43<00:00, 54.55s/it, loss=0.0185]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:07<18:30]Processing MASAD samples:   1%|▏         | 2/148 samples [00:50<1:09:33]Processing MASAD samples:   2%|▏         | 3/148 samples [01:09<57:50]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:09<55:47]
+
+Epoch 22 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      22 |       0.0191 | Validation     | MASAD     |       0.6284 |      0.6216 |            0.6234 |           0.6171 |               0.6234 |              0.6171 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      22 |       0.0191 | Test           | MASAD     |       0.6284 |      0.6284 |            0.6207 |           0.6222 |               0.6207 |              0.6222 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 23/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 23/40 [Train]:   0%|          | 0/3 [00:39<?, ?it/s, loss=0.0185]Epoch 23/40 [Train]:  33%|███▎      | 1/3 [00:39<01:19, 39.75s/it, loss=0.0185]Epoch 23/40 [Train]:  33%|███▎      | 1/3 [02:05<01:19, 39.75s/it, loss=0.0188]Epoch 23/40 [Train]:  67%|██████▋   | 2/3 [02:05<01:06, 66.68s/it, loss=0.0188]Epoch 23/40 [Train]:  67%|██████▋   | 2/3 [02:09<01:06, 66.68s/it, loss=0.0192]Epoch 23/40 [Train]: 100%|██████████| 3/3 [02:09<00:00, 38.31s/it, loss=0.0192]Epoch 23/40 [Train]: 100%|██████████| 3/3 [02:09<00:00, 43.27s/it, loss=0.0192]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:06<14:56]Processing MASAD samples:   1%|▏         | 2/148 samples [00:12<14:42]Processing MASAD samples:   2%|▏         | 3/148 samples [00:26<23:16]Processing MASAD samples:   2%|▏         | 3/148 samples [00:26<20:56]
+
+Epoch 23 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      23 |       0.0188 | Validation     | MASAD     |       0.6284 |      0.6284 |            0.6245 |           0.6245 |               0.6245 |              0.6245 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      23 |       0.0188 | Test           | MASAD     |       0.6351 |      0.6284 |            0.6297 |           0.6234 |               0.6297 |              0.6234 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 24/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 24/40 [Train]:   0%|          | 0/3 [01:08<?, ?it/s, loss=0.0185]Epoch 24/40 [Train]:  33%|███▎      | 1/3 [01:08<02:17, 68.89s/it, loss=0.0185]Epoch 24/40 [Train]:  33%|███▎      | 1/3 [01:52<02:17, 68.89s/it, loss=0.0180]Epoch 24/40 [Train]:  67%|██████▋   | 2/3 [01:52<00:53, 53.99s/it, loss=0.0180]Epoch 24/40 [Train]:  67%|██████▋   | 2/3 [02:26<00:53, 53.99s/it, loss=0.0183]Epoch 24/40 [Train]: 100%|██████████| 3/3 [02:26<00:00, 45.10s/it, loss=0.0183]Epoch 24/40 [Train]: 100%|██████████| 3/3 [02:26<00:00, 48.99s/it, loss=0.0183]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:05<12:44]Processing MASAD samples:   1%|▏         | 2/148 samples [00:39<55:01]Processing MASAD samples:   2%|▏         | 3/148 samples [01:10<1:03:13]Processing MASAD samples:   2%|▏         | 3/148 samples [01:10<56:42]  
+
+Epoch 24 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      24 |       0.0183 | Validation     | MASAD     |       0.6216 |      0.6216 |            0.6182 |           0.6182 |               0.6182 |              0.6182 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      24 |       0.0183 | Test           | MASAD     |       0.6149 |      0.6081 |            0.6109 |           0.6046 |               0.6109 |              0.6046 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 25/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 25/40 [Train]:   0%|          | 0/3 [00:20<?, ?it/s, loss=0.0181]Epoch 25/40 [Train]:  33%|███▎      | 1/3 [00:20<00:41, 20.85s/it, loss=0.0181]Epoch 25/40 [Train]:  33%|███▎      | 1/3 [02:00<00:41, 20.85s/it, loss=0.0178]Epoch 25/40 [Train]:  67%|██████▋   | 2/3 [02:00<01:07, 67.39s/it, loss=0.0178]Epoch 25/40 [Train]:  67%|██████▋   | 2/3 [02:10<01:07, 67.39s/it, loss=0.0171]Epoch 25/40 [Train]: 100%|██████████| 3/3 [02:10<00:00, 40.90s/it, loss=0.0171]Epoch 25/40 [Train]: 100%|██████████| 3/3 [02:10<00:00, 43.40s/it, loss=0.0171]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:04<10:38]Processing MASAD samples:   1%|▏         | 2/148 samples [00:09<11:04]Processing MASAD samples:   2%|▏         | 3/148 samples [00:19<17:00]Processing MASAD samples:   2%|▏         | 3/148 samples [00:19<15:20]
+
+Epoch 25 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      25 |       0.0177 | Validation     | MASAD     |       0.6284 |      0.6284 |            0.6255 |           0.6255 |               0.6255 |              0.6255 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      25 |       0.0177 | Test           | MASAD     |       0.6149 |      0.6149 |            0.6119 |           0.6127 |               0.6119 |              0.6127 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 26/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 26/40 [Train]:   0%|          | 0/3 [01:06<?, ?it/s, loss=0.0177]Epoch 26/40 [Train]:  33%|███▎      | 1/3 [01:06<02:13, 66.77s/it, loss=0.0177]Epoch 26/40 [Train]:  33%|███▎      | 1/3 [01:21<02:13, 66.77s/it, loss=0.0171]Epoch 26/40 [Train]:  67%|██████▋   | 2/3 [01:21<00:36, 36.05s/it, loss=0.0171]Epoch 26/40 [Train]:  67%|██████▋   | 2/3 [01:26<00:36, 36.05s/it, loss=0.0178]Epoch 26/40 [Train]: 100%|██████████| 3/3 [01:26<00:00, 21.94s/it, loss=0.0178]Epoch 26/40 [Train]: 100%|██████████| 3/3 [01:26<00:00, 28.82s/it, loss=0.0178]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:46<1:54:33]Processing MASAD samples:   1%|▏         | 2/148 samples [01:16<1:28:55]Processing MASAD samples:   2%|▏         | 3/148 samples [01:19<51:44]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:19<1:04:05]
+
+Epoch 26 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      26 |       0.0175 | Validation     | MASAD     |       0.6216 |      0.6216 |            0.6182 |           0.6182 |               0.6182 |              0.6182 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      26 |       0.0175 | Test           | MASAD     |       0.6149 |      0.6081 |            0.6119 |           0.6055 |               0.6119 |              0.6055 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 27/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 27/40 [Train]:   0%|          | 0/3 [00:13<?, ?it/s, loss=0.0169]Epoch 27/40 [Train]:  33%|███▎      | 1/3 [00:13<00:27, 13.65s/it, loss=0.0169]Epoch 27/40 [Train]:  33%|███▎      | 1/3 [01:19<00:27, 13.65s/it, loss=0.0173]Epoch 27/40 [Train]:  67%|██████▋   | 2/3 [01:19<00:44, 44.65s/it, loss=0.0173]Epoch 27/40 [Train]:  67%|██████▋   | 2/3 [01:50<00:44, 44.65s/it, loss=0.0167]Epoch 27/40 [Train]: 100%|██████████| 3/3 [01:50<00:00, 38.17s/it, loss=0.0167]Epoch 27/40 [Train]: 100%|██████████| 3/3 [01:50<00:00, 36.82s/it, loss=0.0167]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:02<07:09]Processing MASAD samples:   1%|▏         | 2/148 samples [00:07<08:56]Processing MASAD samples:   2%|▏         | 3/148 samples [00:08<05:55]Processing MASAD samples:   2%|▏         | 3/148 samples [00:08<06:32]
+
+Epoch 27 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      27 |        0.017 | Validation     | MASAD     |       0.6284 |      0.6351 |            0.6245 |           0.6318 |               0.6245 |              0.6318 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      27 |        0.017 | Test           | MASAD     |       0.6216 |      0.6149 |            0.6159 |           0.6097 |               0.6159 |              0.6097 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 28/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 28/40 [Train]:   0%|          | 0/3 [01:20<?, ?it/s, loss=0.0167]Epoch 28/40 [Train]:  33%|███▎      | 1/3 [01:20<02:41, 80.99s/it, loss=0.0167]Epoch 28/40 [Train]:  33%|███▎      | 1/3 [01:34<02:41, 80.99s/it, loss=0.0169]Epoch 28/40 [Train]:  67%|██████▋   | 2/3 [01:34<00:41, 41.16s/it, loss=0.0169]Epoch 28/40 [Train]:  67%|██████▋   | 2/3 [01:38<00:41, 41.16s/it, loss=0.0159]Epoch 28/40 [Train]: 100%|██████████| 3/3 [01:38<00:00, 24.15s/it, loss=0.0159]Epoch 28/40 [Train]: 100%|██████████| 3/3 [01:38<00:00, 32.73s/it, loss=0.0159]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:33<1:20:59]Processing MASAD samples:   1%|▏         | 2/148 samples [01:08<1:23:12]Processing MASAD samples:   2%|▏         | 3/148 samples [01:15<53:04]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:15<1:00:47]
+
+Epoch 28 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      28 |       0.0165 | Validation     | MASAD     |       0.6351 |      0.6351 |            0.6308 |           0.6308 |               0.6308 |              0.6308 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      28 |       0.0165 | Test           | MASAD     |       0.6284 |      0.6216 |            0.6207 |           0.6146 |               0.6207 |              0.6146 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 29/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 29/40 [Train]:   0%|          | 0/3 [00:39<?, ?it/s, loss=0.0165]Epoch 29/40 [Train]:  33%|███▎      | 1/3 [00:39<01:19, 39.66s/it, loss=0.0165]Epoch 29/40 [Train]:  33%|███▎      | 1/3 [01:42<01:19, 39.66s/it, loss=0.0163]Epoch 29/40 [Train]:  67%|██████▋   | 2/3 [01:42<00:53, 53.16s/it, loss=0.0163]Epoch 29/40 [Train]:  67%|██████▋   | 2/3 [01:54<00:53, 53.16s/it, loss=0.0161]Epoch 29/40 [Train]: 100%|██████████| 3/3 [01:54<00:00, 34.29s/it, loss=0.0161]Epoch 29/40 [Train]: 100%|██████████| 3/3 [01:54<00:00, 38.04s/it, loss=0.0161]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:11<27:01]Processing MASAD samples:   1%|▏         | 2/148 samples [00:14<16:12]Processing MASAD samples:   2%|▏         | 3/148 samples [00:15<09:31]Processing MASAD samples:   2%|▏         | 3/148 samples [00:15<12:21]
+
+Epoch 29 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      29 |       0.0163 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6371 |           0.6445 |               0.6371 |              0.6445 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      29 |       0.0163 | Test           | MASAD     |       0.6216 |      0.6149 |            0.6131 |           0.607  |               0.6131 |              0.607  |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 30/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 30/40 [Train]:   0%|          | 0/3 [00:15<?, ?it/s, loss=0.0162]Epoch 30/40 [Train]:  33%|███▎      | 1/3 [00:15<00:31, 15.50s/it, loss=0.0162]Epoch 30/40 [Train]:  33%|███▎      | 1/3 [01:11<00:31, 15.50s/it, loss=0.0160]Epoch 30/40 [Train]:  67%|██████▋   | 2/3 [01:11<00:39, 39.38s/it, loss=0.0160]Epoch 30/40 [Train]:  67%|██████▋   | 2/3 [01:34<00:39, 39.38s/it, loss=0.0157]Epoch 30/40 [Train]: 100%|██████████| 3/3 [01:34<00:00, 31.83s/it, loss=0.0157]Epoch 30/40 [Train]: 100%|██████████| 3/3 [01:34<00:00, 31.48s/it, loss=0.0157]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:14<36:34]Processing MASAD samples:   1%|▏         | 2/148 samples [00:49<1:04:37]Processing MASAD samples:   2%|▏         | 3/148 samples [00:58<44:35]  Processing MASAD samples:   2%|▏         | 3/148 samples [00:58<47:04]
+
+Epoch 30 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      30 |        0.016 | Validation     | MASAD     |       0.6419 |      0.6419 |            0.6359 |           0.6359 |               0.6359 |              0.6359 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      30 |        0.016 | Test           | MASAD     |       0.6216 |      0.6216 |            0.6131 |           0.6146 |               0.6131 |              0.6146 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 31/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 31/40 [Train]:   0%|          | 0/3 [00:41<?, ?it/s, loss=0.0157]Epoch 31/40 [Train]:  33%|███▎      | 1/3 [00:41<01:23, 41.66s/it, loss=0.0157]Epoch 31/40 [Train]:  33%|███▎      | 1/3 [01:13<01:23, 41.66s/it, loss=0.0159]Epoch 31/40 [Train]:  67%|██████▋   | 2/3 [01:13<00:36, 36.02s/it, loss=0.0159]Epoch 31/40 [Train]:  67%|██████▋   | 2/3 [01:38<00:36, 36.02s/it, loss=0.0156]Epoch 31/40 [Train]: 100%|██████████| 3/3 [01:38<00:00, 30.66s/it, loss=0.0156]Epoch 31/40 [Train]: 100%|██████████| 3/3 [01:38<00:00, 32.67s/it, loss=0.0156]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:04<10:32]Processing MASAD samples:   1%|▏         | 2/148 samples [00:56<1:19:36]Processing MASAD samples:   2%|▏         | 3/148 samples [01:03<50:27]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:03<51:19]
+
+Epoch 31 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      31 |       0.0157 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      31 |       0.0157 | Test           | MASAD     |       0.6216 |      0.6284 |            0.6131 |           0.6222 |               0.6131 |              0.6222 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 32/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 32/40 [Train]:   0%|          | 0/3 [01:57<?, ?it/s, loss=0.0160]Epoch 32/40 [Train]:  33%|███▎      | 1/3 [01:57<03:54, 117.37s/it, loss=0.0160]Epoch 32/40 [Train]:  33%|███▎      | 1/3 [02:10<03:54, 117.37s/it, loss=0.0156]Epoch 32/40 [Train]:  67%|██████▋   | 2/3 [02:10<00:55, 55.82s/it, loss=0.0156] Epoch 32/40 [Train]:  67%|██████▋   | 2/3 [02:15<00:55, 55.82s/it, loss=0.0152]Epoch 32/40 [Train]: 100%|██████████| 3/3 [02:15<00:00, 32.98s/it, loss=0.0152]Epoch 32/40 [Train]: 100%|██████████| 3/3 [02:15<00:00, 45.30s/it, loss=0.0152]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:55<2:16:38]Processing MASAD samples:   1%|▏         | 2/148 samples [01:09<1:16:12]Processing MASAD samples:   2%|▏         | 3/148 samples [01:10<41:54]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:10<56:56]
+
+Epoch 32 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      32 |       0.0156 | Validation     | MASAD     |       0.6419 |      0.6419 |            0.6359 |           0.6359 |               0.6359 |              0.6359 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      32 |       0.0156 | Test           | MASAD     |       0.6216 |      0.6351 |            0.6131 |           0.6283 |               0.6131 |              0.6283 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 33/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 33/40 [Train]:   0%|          | 0/3 [01:44<?, ?it/s, loss=0.0159]Epoch 33/40 [Train]:  33%|███▎      | 1/3 [01:44<03:29, 104.95s/it, loss=0.0159]Epoch 33/40 [Train]:  33%|███▎      | 1/3 [02:10<03:29, 104.95s/it, loss=0.0157]Epoch 33/40 [Train]:  67%|██████▋   | 2/3 [02:10<00:58, 58.11s/it, loss=0.0157] Epoch 33/40 [Train]:  67%|██████▋   | 2/3 [02:13<00:58, 58.11s/it, loss=0.0149]Epoch 33/40 [Train]: 100%|██████████| 3/3 [02:13<00:00, 33.22s/it, loss=0.0149]Epoch 33/40 [Train]: 100%|██████████| 3/3 [02:13<00:00, 44.63s/it, loss=0.0149]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:59<2:26:46]Processing MASAD samples:   1%|▏         | 2/148 samples [01:23<1:33:48]Processing MASAD samples:   2%|▏         | 3/148 samples [01:24<51:43]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:24<1:08:04]
+
+Epoch 33 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      33 |       0.0155 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      33 |       0.0155 | Test           | MASAD     |       0.6216 |      0.6149 |            0.6131 |           0.607  |               0.6131 |              0.607  |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 34/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 34/40 [Train]:   0%|          | 0/3 [01:36<?, ?it/s, loss=0.0159]Epoch 34/40 [Train]:  33%|███▎      | 1/3 [01:36<03:13, 96.51s/it, loss=0.0159]Epoch 34/40 [Train]:  33%|███▎      | 1/3 [02:20<03:13, 96.51s/it, loss=0.0155]Epoch 34/40 [Train]:  67%|██████▋   | 2/3 [02:20<01:05, 65.37s/it, loss=0.0155]Epoch 34/40 [Train]:  67%|██████▋   | 2/3 [02:52<01:05, 65.37s/it, loss=0.0155]Epoch 34/40 [Train]: 100%|██████████| 3/3 [02:52<00:00, 50.19s/it, loss=0.0155]Epoch 34/40 [Train]: 100%|██████████| 3/3 [02:52<00:00, 57.40s/it, loss=0.0155]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:08<20:28]Processing MASAD samples:   1%|▏         | 2/148 samples [00:11<13:14]Processing MASAD samples:   2%|▏         | 3/148 samples [00:21<17:50]Processing MASAD samples:   2%|▏         | 3/148 samples [00:21<17:17]
+
+Epoch 34 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      34 |       0.0156 | Validation     | MASAD     |       0.6419 |      0.6419 |            0.6359 |           0.6359 |               0.6359 |              0.6359 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      34 |       0.0156 | Test           | MASAD     |       0.6216 |      0.6284 |            0.6131 |           0.6207 |               0.6131 |              0.6207 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 35/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 35/40 [Train]:   0%|          | 0/3 [01:20<?, ?it/s, loss=0.0157]Epoch 35/40 [Train]:  33%|███▎      | 1/3 [01:20<02:41, 80.70s/it, loss=0.0157]Epoch 35/40 [Train]:  33%|███▎      | 1/3 [01:33<02:41, 80.70s/it, loss=0.0156]Epoch 35/40 [Train]:  67%|██████▋   | 2/3 [01:33<00:40, 40.54s/it, loss=0.0156]Epoch 35/40 [Train]:  67%|██████▋   | 2/3 [01:57<00:40, 40.54s/it, loss=0.0156]Epoch 35/40 [Train]: 100%|██████████| 3/3 [01:57<00:00, 33.13s/it, loss=0.0156]Epoch 35/40 [Train]: 100%|██████████| 3/3 [01:57<00:00, 39.14s/it, loss=0.0156]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:47<1:55:26]Processing MASAD samples:   1%|▏         | 2/148 samples [00:58<1:04:05]Processing MASAD samples:   2%|▏         | 3/148 samples [00:59<35:41]  Processing MASAD samples:   2%|▏         | 3/148 samples [00:59<48:16]
+
+Epoch 35 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      35 |       0.0157 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      35 |       0.0157 | Test           | MASAD     |       0.6216 |      0.6149 |            0.6131 |           0.607  |               0.6131 |              0.607  |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 36/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 36/40 [Train]:   0%|          | 0/3 [01:42<?, ?it/s, loss=0.0160]Epoch 36/40 [Train]:  33%|███▎      | 1/3 [01:42<03:25, 102.72s/it, loss=0.0160]Epoch 36/40 [Train]:  33%|███▎      | 1/3 [02:25<03:25, 102.72s/it, loss=0.0153]Epoch 36/40 [Train]:  67%|██████▋   | 2/3 [02:25<01:07, 67.57s/it, loss=0.0153] Epoch 36/40 [Train]:  67%|██████▋   | 2/3 [03:06<01:07, 67.57s/it, loss=0.0154]Epoch 36/40 [Train]: 100%|██████████| 3/3 [03:06<00:00, 55.26s/it, loss=0.0154]Epoch 36/40 [Train]: 100%|██████████| 3/3 [03:06<00:00, 62.09s/it, loss=0.0154]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:18<45:45]Processing MASAD samples:   1%|▏         | 2/148 samples [01:02<1:21:49]Processing MASAD samples:   2%|▏         | 3/148 samples [01:24<1:07:53]Processing MASAD samples:   2%|▏         | 3/148 samples [01:24<1:07:53]
+
+Epoch 36 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      36 |       0.0156 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      36 |       0.0156 | Test           | MASAD     |       0.6216 |      0.6216 |            0.6131 |           0.6146 |               0.6131 |              0.6146 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 37/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 37/40 [Train]:   0%|          | 0/3 [00:43<?, ?it/s, loss=0.0156]Epoch 37/40 [Train]:  33%|███▎      | 1/3 [00:43<01:26, 43.23s/it, loss=0.0156]Epoch 37/40 [Train]:  33%|███▎      | 1/3 [02:11<01:26, 43.23s/it, loss=0.0155]Epoch 37/40 [Train]:  67%|██████▋   | 2/3 [02:11<01:09, 69.62s/it, loss=0.0155]Epoch 37/40 [Train]:  67%|██████▋   | 2/3 [02:15<01:09, 69.62s/it, loss=0.0160]Epoch 37/40 [Train]: 100%|██████████| 3/3 [02:15<00:00, 39.82s/it, loss=0.0160]Epoch 37/40 [Train]: 100%|██████████| 3/3 [02:15<00:00, 45.23s/it, loss=0.0160]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:04<11:51]Processing MASAD samples:   1%|▏         | 2/148 samples [00:08<09:34]Processing MASAD samples:   2%|▏         | 3/148 samples [00:10<07:15]Processing MASAD samples:   2%|▏         | 3/148 samples [00:10<08:05]
+
+Epoch 37 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      37 |       0.0157 | Validation     | MASAD     |       0.6419 |      0.6419 |            0.6359 |           0.6359 |               0.6359 |              0.6359 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      37 |       0.0157 | Test           | MASAD     |       0.6216 |      0.6149 |            0.6131 |           0.607  |               0.6131 |              0.607  |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 38/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 38/40 [Train]:   0%|          | 0/3 [01:22<?, ?it/s, loss=0.0154]Epoch 38/40 [Train]:  33%|███▎      | 1/3 [01:22<02:45, 82.74s/it, loss=0.0154]Epoch 38/40 [Train]:  33%|███▎      | 1/3 [01:37<02:45, 82.74s/it, loss=0.0156]Epoch 38/40 [Train]:  67%|██████▋   | 2/3 [01:37<00:42, 42.78s/it, loss=0.0156]Epoch 38/40 [Train]:  67%|██████▋   | 2/3 [01:48<00:42, 42.78s/it, loss=0.0161]Epoch 38/40 [Train]: 100%|██████████| 3/3 [01:48<00:00, 28.24s/it, loss=0.0161]Epoch 38/40 [Train]: 100%|██████████| 3/3 [01:48<00:00, 36.16s/it, loss=0.0161]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:44<1:49:18]Processing MASAD samples:   1%|▏         | 2/148 samples [01:21<1:37:23]Processing MASAD samples:   2%|▏         | 3/148 samples [01:22<53:26]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:22<1:06:14]
+
+Epoch 38 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      38 |       0.0157 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      38 |       0.0157 | Test           | MASAD     |       0.6216 |      0.6284 |            0.6131 |           0.6207 |               0.6131 |              0.6207 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 39/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 39/40 [Train]:   0%|          | 0/3 [00:23<?, ?it/s, loss=0.0157]Epoch 39/40 [Train]:  33%|███▎      | 1/3 [00:23<00:46, 23.32s/it, loss=0.0157]Epoch 39/40 [Train]:  33%|███▎      | 1/3 [01:31<00:46, 23.32s/it, loss=0.0155]Epoch 39/40 [Train]:  67%|██████▋   | 2/3 [01:31<00:49, 49.73s/it, loss=0.0155]Epoch 39/40 [Train]:  67%|██████▋   | 2/3 [01:59<00:49, 49.73s/it, loss=0.0153]Epoch 39/40 [Train]: 100%|██████████| 3/3 [01:59<00:00, 39.86s/it, loss=0.0153]Epoch 39/40 [Train]: 100%|██████████| 3/3 [01:59<00:00, 39.88s/it, loss=0.0153]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:02<06:34]Processing MASAD samples:   1%|▏         | 2/148 samples [00:05<06:07]Processing MASAD samples:   2%|▏         | 3/148 samples [00:05<04:18]Processing MASAD samples:   2%|▏         | 3/148 samples [00:05<04:49]
+
+Epoch 39 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      39 |       0.0155 | Validation     | MASAD     |       0.6419 |      0.6419 |            0.6359 |           0.6359 |               0.6359 |              0.6359 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      39 |       0.0155 | Test           | MASAD     |       0.6216 |      0.6216 |            0.6131 |           0.6146 |               0.6131 |              0.6146 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+Epoch 40/40 [Train]:   0%|          | 0/3 [00:00<?, ?it/s]Epoch 40/40 [Train]:   0%|          | 0/3 [01:35<?, ?it/s, loss=0.0156]Epoch 40/40 [Train]:  33%|███▎      | 1/3 [01:35<03:11, 95.52s/it, loss=0.0156]Epoch 40/40 [Train]:  33%|███▎      | 1/3 [02:06<03:11, 95.52s/it, loss=0.0153]Epoch 40/40 [Train]:  67%|██████▋   | 2/3 [02:06<00:57, 57.30s/it, loss=0.0153]Epoch 40/40 [Train]:  67%|██████▋   | 2/3 [02:10<00:57, 57.30s/it, loss=0.0162]Epoch 40/40 [Train]: 100%|██████████| 3/3 [02:10<00:00, 33.24s/it, loss=0.0162]Epoch 40/40 [Train]: 100%|██████████| 3/3 [02:10<00:00, 43.56s/it, loss=0.0162]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:43<1:46:04]Processing MASAD samples:   1%|▏         | 2/148 samples [01:24<1:43:03]Processing MASAD samples:   2%|▏         | 3/148 samples [01:26<57:22]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:26<1:09:44]
+
+Epoch 40 Results:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|      40 |       0.0157 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      40 |       0.0157 | Test           | MASAD     |       0.6216 |      0.6284 |            0.6131 |           0.6207 |               0.6131 |              0.6207 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+
+Training completed. Best validation accuracy: 0.6554 at epoch 18
+
+Test accuracy plot saved to ./plots/masad/masad_few_121.png
+Collecting features:   0%|          | 0/3 [00:00<?, ?it/s]Collecting features:  33%|███▎      | 1/3 [00:33<01:06, 33.24s/it]Collecting features:  67%|██████▋   | 2/3 [01:53<01:01, 61.12s/it]Collecting features: 100%|██████████| 3/3 [02:08<00:00, 40.10s/it]Collecting features: 100%|██████████| 3/3 [02:08<00:00, 42.98s/it]
+
+Complete Training History:
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|   Epoch |   Train Loss | Dataset Type   | Dataset   |   Fusion Acc |   LLaMA Acc |   Fusion F1 Macro |   LLaMA F1 Macro |   Fusion F1 Weighted |   LLaMA F1 Weighted |
++=========+==============+================+===========+==============+=============+===================+==================+======================+=====================+
+|       1 |       0.7272 | Validation     | MASAD     |       0.5270 |      0.5405 |            0.5163 |           0.5320 |               0.5163 |              0.5320 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       1 |       0.7272 | Test           | MASAD     |       0.4595 |      0.4865 |            0.4394 |           0.4726 |               0.4394 |              0.4726 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       2 |       0.6828 | Validation     | MASAD     |       0.4932 |      0.5338 |            0.3895 |           0.4591 |               0.3895 |              0.4591 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       2 |       0.6828 | Test           | MASAD     |       0.4932 |      0.5068 |            0.3626 |           0.4058 |               0.3626 |              0.4058 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       3 |       0.6469 | Validation     | MASAD     |       0.5473 |      0.5473 |            0.5056 |           0.5097 |               0.5056 |              0.5097 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       3 |       0.6469 | Test           | MASAD     |       0.5270 |      0.5541 |            0.4661 |           0.5108 |               0.4661 |              0.5108 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       4 |       0.5772 | Validation     | MASAD     |       0.6081 |      0.6149 |            0.5913 |           0.5972 |               0.5913 |              0.5972 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       4 |       0.5772 | Test           | MASAD     |       0.5946 |      0.6014 |            0.5747 |           0.5805 |               0.5747 |              0.5805 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       5 |       0.5429 | Validation     | MASAD     |       0.5946 |      0.6014 |            0.5939 |           0.6005 |               0.5939 |              0.6005 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       5 |       0.5429 | Test           | MASAD     |       0.6486 |      0.6486 |            0.6481 |           0.6476 |               0.6481 |              0.6476 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       6 |       0.4703 | Validation     | MASAD     |       0.6149 |      0.6216 |            0.5829 |           0.5949 |               0.5829 |              0.5949 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       6 |       0.4703 | Test           | MASAD     |       0.5878 |      0.5946 |            0.5536 |           0.5691 |               0.5536 |              0.5691 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       7 |       0.3889 | Validation     | MASAD     |       0.6216 |      0.6351 |            0.6213 |           0.6345 |               0.6213 |              0.6345 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       7 |       0.3889 | Test           | MASAD     |       0.6622 |      0.6554 |            0.6619 |           0.6550 |               0.6619 |              0.6550 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       8 |       0.3141 | Validation     | MASAD     |       0.6284 |      0.6351 |            0.6275 |           0.6345 |               0.6275 |              0.6345 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       8 |       0.3141 | Test           | MASAD     |       0.6757 |      0.6757 |            0.6754 |           0.6756 |               0.6754 |              0.6756 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       9 |       0.2279 | Validation     | MASAD     |       0.6284 |      0.6351 |            0.6255 |           0.6327 |               0.6255 |              0.6327 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|       9 |       0.2279 | Test           | MASAD     |       0.6757 |      0.6824 |            0.6718 |           0.6791 |               0.6718 |              0.6791 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      10 |       0.1605 | Validation     | MASAD     |       0.6216 |      0.6216 |            0.6216 |           0.6216 |               0.6216 |              0.6216 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      10 |       0.1605 | Test           | MASAD     |       0.6622 |      0.6622 |            0.6621 |           0.6621 |               0.6621 |              0.6621 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      11 |       0.1153 | Validation     | MASAD     |       0.6284 |      0.6216 |            0.6275 |           0.6210 |               0.6275 |              0.6210 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      11 |       0.1153 | Test           | MASAD     |       0.6622 |      0.6689 |            0.6612 |           0.6677 |               0.6612 |              0.6677 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      12 |       0.0705 | Validation     | MASAD     |       0.6486 |      0.6486 |            0.6407 |           0.6407 |               0.6407 |              0.6407 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      12 |       0.0705 | Test           | MASAD     |       0.6554 |      0.6689 |            0.6508 |           0.6655 |               0.6508 |              0.6655 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      13 |       0.0508 | Validation     | MASAD     |       0.6419 |      0.6419 |            0.6415 |           0.6415 |               0.6415 |              0.6415 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      13 |       0.0508 | Test           | MASAD     |       0.6554 |      0.6486 |            0.6554 |           0.6486 |               0.6554 |              0.6486 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      14 |       0.0375 | Validation     | MASAD     |       0.6149 |      0.6149 |            0.6109 |           0.6097 |               0.6109 |              0.6097 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      14 |       0.0375 | Test           | MASAD     |       0.5946 |      0.5743 |            0.5898 |           0.5672 |               0.5898 |              0.5672 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      15 |       0.0308 | Validation     | MASAD     |       0.6284 |      0.6351 |            0.6275 |           0.6341 |               0.6275 |              0.6341 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      15 |       0.0308 | Test           | MASAD     |       0.6149 |      0.6081 |            0.6134 |           0.6063 |               0.6134 |              0.6063 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      16 |       0.0263 | Validation     | MASAD     |       0.6486 |      0.6486 |            0.6476 |           0.6476 |               0.6476 |              0.6476 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      16 |       0.0263 | Test           | MASAD     |       0.6216 |      0.6284 |            0.6210 |           0.6280 |               0.6210 |              0.6280 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      17 |       0.0237 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      17 |       0.0237 | Test           | MASAD     |       0.6419 |      0.6419 |            0.6345 |           0.6359 |               0.6345 |              0.6359 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      18 |       0.0223 | Validation     | MASAD     |       0.6554 |      0.6622 |            0.6453 |           0.6530 |               0.6453 |              0.6530 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      18 |       0.0223 | Test           | MASAD     |       0.6351 |      0.6351 |            0.6253 |           0.6269 |               0.6253 |              0.6269 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      19 |       0.0215 | Validation     | MASAD     |       0.6554 |      0.6554 |            0.6435 |           0.6435 |               0.6435 |              0.6435 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      19 |       0.0215 | Test           | MASAD     |       0.6284 |      0.6351 |            0.6175 |           0.6269 |               0.6175 |              0.6269 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      20 |       0.0207 | Validation     | MASAD     |       0.6284 |      0.6351 |            0.6207 |           0.6283 |               0.6207 |              0.6283 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      20 |       0.0207 | Test           | MASAD     |       0.6284 |      0.6284 |            0.6175 |           0.6192 |               0.6175 |              0.6192 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      21 |       0.0199 | Validation     | MASAD     |       0.6284 |      0.6284 |            0.6234 |           0.6234 |               0.6234 |              0.6234 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      21 |       0.0199 | Test           | MASAD     |       0.6284 |      0.6284 |            0.6192 |           0.6207 |               0.6192 |              0.6207 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      22 |       0.0191 | Validation     | MASAD     |       0.6284 |      0.6216 |            0.6234 |           0.6171 |               0.6234 |              0.6171 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      22 |       0.0191 | Test           | MASAD     |       0.6284 |      0.6284 |            0.6207 |           0.6222 |               0.6207 |              0.6222 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      23 |       0.0188 | Validation     | MASAD     |       0.6284 |      0.6284 |            0.6245 |           0.6245 |               0.6245 |              0.6245 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      23 |       0.0188 | Test           | MASAD     |       0.6351 |      0.6284 |            0.6297 |           0.6234 |               0.6297 |              0.6234 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      24 |       0.0183 | Validation     | MASAD     |       0.6216 |      0.6216 |            0.6182 |           0.6182 |               0.6182 |              0.6182 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      24 |       0.0183 | Test           | MASAD     |       0.6149 |      0.6081 |            0.6109 |           0.6046 |               0.6109 |              0.6046 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      25 |       0.0177 | Validation     | MASAD     |       0.6284 |      0.6284 |            0.6255 |           0.6255 |               0.6255 |              0.6255 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      25 |       0.0177 | Test           | MASAD     |       0.6149 |      0.6149 |            0.6119 |           0.6127 |               0.6119 |              0.6127 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      26 |       0.0175 | Validation     | MASAD     |       0.6216 |      0.6216 |            0.6182 |           0.6182 |               0.6182 |              0.6182 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      26 |       0.0175 | Test           | MASAD     |       0.6149 |      0.6081 |            0.6119 |           0.6055 |               0.6119 |              0.6055 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      27 |       0.0170 | Validation     | MASAD     |       0.6284 |      0.6351 |            0.6245 |           0.6318 |               0.6245 |              0.6318 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      27 |       0.0170 | Test           | MASAD     |       0.6216 |      0.6149 |            0.6159 |           0.6097 |               0.6159 |              0.6097 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      28 |       0.0165 | Validation     | MASAD     |       0.6351 |      0.6351 |            0.6308 |           0.6308 |               0.6308 |              0.6308 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      28 |       0.0165 | Test           | MASAD     |       0.6284 |      0.6216 |            0.6207 |           0.6146 |               0.6207 |              0.6146 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      29 |       0.0163 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6371 |           0.6445 |               0.6371 |              0.6445 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      29 |       0.0163 | Test           | MASAD     |       0.6216 |      0.6149 |            0.6131 |           0.6070 |               0.6131 |              0.6070 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      30 |       0.0160 | Validation     | MASAD     |       0.6419 |      0.6419 |            0.6359 |           0.6359 |               0.6359 |              0.6359 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      30 |       0.0160 | Test           | MASAD     |       0.6216 |      0.6216 |            0.6131 |           0.6146 |               0.6131 |              0.6146 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      31 |       0.0157 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      31 |       0.0157 | Test           | MASAD     |       0.6216 |      0.6284 |            0.6131 |           0.6222 |               0.6131 |              0.6222 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      32 |       0.0156 | Validation     | MASAD     |       0.6419 |      0.6419 |            0.6359 |           0.6359 |               0.6359 |              0.6359 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      32 |       0.0156 | Test           | MASAD     |       0.6216 |      0.6351 |            0.6131 |           0.6283 |               0.6131 |              0.6283 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      33 |       0.0155 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      33 |       0.0155 | Test           | MASAD     |       0.6216 |      0.6149 |            0.6131 |           0.6070 |               0.6131 |              0.6070 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      34 |       0.0156 | Validation     | MASAD     |       0.6419 |      0.6419 |            0.6359 |           0.6359 |               0.6359 |              0.6359 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      34 |       0.0156 | Test           | MASAD     |       0.6216 |      0.6284 |            0.6131 |           0.6207 |               0.6131 |              0.6207 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      35 |       0.0157 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      35 |       0.0157 | Test           | MASAD     |       0.6216 |      0.6149 |            0.6131 |           0.6070 |               0.6131 |              0.6070 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      36 |       0.0156 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      36 |       0.0156 | Test           | MASAD     |       0.6216 |      0.6216 |            0.6131 |           0.6146 |               0.6131 |              0.6146 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      37 |       0.0157 | Validation     | MASAD     |       0.6419 |      0.6419 |            0.6359 |           0.6359 |               0.6359 |              0.6359 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      37 |       0.0157 | Test           | MASAD     |       0.6216 |      0.6149 |            0.6131 |           0.6070 |               0.6131 |              0.6070 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      38 |       0.0157 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      38 |       0.0157 | Test           | MASAD     |       0.6216 |      0.6284 |            0.6131 |           0.6207 |               0.6131 |              0.6207 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      39 |       0.0155 | Validation     | MASAD     |       0.6419 |      0.6419 |            0.6359 |           0.6359 |               0.6359 |              0.6359 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      39 |       0.0155 | Test           | MASAD     |       0.6216 |      0.6216 |            0.6131 |           0.6146 |               0.6131 |              0.6146 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      40 |       0.0157 | Validation     | MASAD     |       0.6419 |      0.6486 |            0.6359 |           0.6434 |               0.6359 |              0.6434 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+|      40 |       0.0157 | Test           | MASAD     |       0.6216 |      0.6284 |            0.6131 |           0.6207 |               0.6131 |              0.6207 |
++---------+--------------+----------------+-----------+--------------+-------------+-------------------+------------------+----------------------+---------------------+
+
+Best Model Performance (Epoch 18):
+
+Validation Results:
+Fusion Accuracy: 0.6554
+Fusion F1 Macro: 0.6453
+Fusion F1 Weighted: 0.6453
+LLaMA Accuracy: 0.6622
+LLaMA F1 Macro: 0.6530
+LLaMA F1 Weighted: 0.6530
+
+Test Results:
+Fusion Accuracy: 0.6351
+Fusion F1 Macro: 0.6253
+Fusion F1 Weighted: 0.6253
+LLaMA Accuracy: 0.6351
+LLaMA F1 Macro: 0.6269
+LLaMA F1 Weighted: 0.6269
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:23<01:10, 23.50s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:47<00:47, 23.85s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [01:17<00:26, 26.59s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:21<00:00, 17.67s/it]Loading checkpoint shards: 100%|██████████| 4/4 [01:21<00:00, 20.36s/it]
+
+Testing MASAD dataset...
+Total samples: 148
+Processing MASAD samples:   0%|          | 0/148 samples [00:00<?]Processing MASAD samples:   1%|          | 1/148 samples [00:49<2:01:20]Processing MASAD samples:   1%|▏         | 2/148 samples [00:56<59:21]  Processing MASAD samples:   2%|▏         | 3/148 samples [01:00<36:40]Processing MASAD samples:   2%|▏         | 3/148 samples [01:00<48:45]
+
+Test Results:
+Dataset      Fusion Acc    Fusion F1 Macro    Fusion F1 Weighted    LLaMA Acc    LLaMA F1 Macro    LLaMA F1 Weighted
+---------  ------------  -----------------  --------------------  -----------  ----------------  -------------------
+MASAD            0.6216             0.6131                0.6131       0.6216            0.6131               0.6131
+Testing completed.
