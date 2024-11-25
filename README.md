@@ -9,10 +9,8 @@ The figure shows the architectures of  our MAPLE-Net approaches for MSA tasks.
 
 ## Requirements
 
-Use
->pip install -r requirments
-
-to install requiremenrts
+To install the required dependencies, run the following command:
+>pip install -r requirements.txt
 
 ## Prepare the data
 
