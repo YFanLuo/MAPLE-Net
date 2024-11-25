@@ -16,20 +16,6 @@ To install the required dependencies, run the following command:
 
 You can download the datasets from the original links below and preprocess the data following the scrips in `datasets_pre_processing`.
 
-Prepare the Models
-Pre-trained Language Models
-In this project, we utilize the following pre-trained language models:
-
-Autoregressive Language Modeling Prompt: Based on the LLaMA architecture.
-Masked Language Modeling Prompt: Based on the BERT architecture.
-You can experiment with other pre-trained language models to complete the tasks.
-
-Caption Generation
-To generate image captions, we employ the ClipCap model, which facilitates caption generation. Ensure the model weights are downloaded from Hugging Face and placed in the models/ directory.
-
-Multimodal Feature Extraction
-For multimodal feature extraction, we leverage the MaPLe model, a CLIP-based enhanced model. You may also choose to use alternative multimodal models to achieve this functionality.
-
 >**Original links**
 >
 >COCO2014: [`train2014.zip`](http://images.cocodataset.org/zips/train2014.zip) and [`val2014.zip`](http://images.cocodataset.org/zips/val2014.zip) from https://cocodataset.org
@@ -42,7 +28,24 @@ For multimodal feature extraction, we leverage the MaPLe model, a CLIP-based enh
 >
 >TumEmo: [`all_data_id_and_label.txt`](https://pan.baidu.com/s/1O8GmVGCDp_XRftSdEBLghQ) (access code `9hh1`) and [`all_data.zip`](https://pan.baidu.com/s/1F5d1urf67-yaSy-tcsS_4A) (access code `88il`) from https://github.com/YangXiaocui1215/MVAN
 
+## Prepare the Models
+# Prepare the Models
 
+## Pre-trained Language Models
+- **Autoregressive Language Modeling Prompt**  
+  Based on the **LLaMA** architecture.
+
+- **Masked Language Modeling Prompt**  
+  Based on the **BERT** architecture.
+
+- **Other Pre-trained Language Models**  
+  You can experiment with alternative pre-trained language models to accomplish the tasks.
+
+## Caption Generation
+To generate image captions, we use the **ClipCap** model. Make sure to download the model and place them in the `models/` directory.
+
+## Multimodal Feature Extraction
+For multimodal feature extraction, we utilize the **MaPLe model**, an enhanced CLIP-based model. The pre-trained weights for MaPLe are already saved in the `models/` directory. Alternatively, you may choose to use other multimodal models to achieve this functionality.
 
 ## Quick start
 
