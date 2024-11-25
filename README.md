@@ -33,19 +33,21 @@ You can download the datasets from the original links below and preprocess the d
 
 ## Pre-trained Language Models
 - **Autoregressive Language Modeling Prompt**  
-  Based on the **LLaMA** architecture.
+  Based on the **LLaMA** architecture：https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct
 
 - **Masked Language Modeling Prompt**  
-  Based on the **BERT** architecture.
+  Based on the **BERT** architecture：https://huggingface.co/google-bert/bert-base-uncased
 
 - **Other Pre-trained Language Models**  
   You can experiment with alternative pre-trained language models to accomplish the tasks.
 
 ## Caption Generation
-To generate image captions, we use the **ClipCap** model. Make sure to download the model and place them in the `models/` directory.
+To generate image captions, we use the **ClipCap** model from https://github.com/rmokady/CLIP_prefix_caption. 
+Make sure to download the models and place them in the `models/` directory.
 
 ## Multimodal Feature Extraction
-For multimodal feature extraction, we utilize the **MaPLe model**, an enhanced CLIP-based model. The pre-trained weights for MaPLe are already saved in the `models/` directory. Alternatively, you may choose to use other multimodal models to achieve this functionality.
+For multimodal feature extraction, we utilize the **MaPLe model**, an enhanced CLIP-based model, from  https://github.com/muzairkhattak/multimodal-prompt-learning/tree/main.
+Alternatively, you may choose to use other multimodal models to achieve this functionality.
 
 ## Quick start
 
