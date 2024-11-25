@@ -32,10 +32,15 @@ You can download the datasets from the original links below and preprocess the d
 # Prepare the Models
 
 ## Pre-trained Language Models
+
+We provide two versions of prompt templates to accommodate different pre-trained language models:
+
 - **Autoregressive Language Modeling Prompt**  
+  Code: src/test_model.py
   Based on the **LLaMA** architecture：https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct
 
-- **Masked Language Modeling Prompt**  
+- **Masked Language Modeling Prompt**
+  Code: src/test_model_masked.py
   Based on the **BERT** architecture：https://huggingface.co/google-bert/bert-base-uncased
 
 - **Other Pre-trained Language Models**  
@@ -43,11 +48,12 @@ You can download the datasets from the original links below and preprocess the d
 
 ## Caption Generation
 To generate image captions, we use the **ClipCap** model from https://github.com/rmokady/CLIP_prefix_caption. 
-Make sure to download the models and place them in the `models/` directory.
 
 ## Multimodal Feature Extraction
 For multimodal feature extraction, we utilize the **MaPLe model**, an enhanced CLIP-based model, from  https://github.com/muzairkhattak/multimodal-prompt-learning/tree/main.
 Alternatively, you may choose to use other multimodal models to achieve this functionality.
+
+Make sure to download the models and place them in the `models/<model_name>` directory
 
 ## Quick start
 
