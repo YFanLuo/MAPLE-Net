@@ -3,6 +3,7 @@
 ## Overview
 
 ![model architectures](figs/overview.png)
+![model architectures](figs/flowchart.png)
 
 The figure shows the architectures of  our MAPLE-Net approaches for MSA tasks. 
 
@@ -16,6 +17,20 @@ to install requiremenrts
 ## Prepare the data
 
 You can download the datasets from the original links below and preprocess the data following the scrips in `datasets_pre_processing`.
+
+Prepare the Models
+Pre-trained Language Models
+In this project, we utilize the following pre-trained language models:
+
+Autoregressive Language Modeling Prompt: Based on the LLaMA architecture.
+Masked Language Modeling Prompt: Based on the BERT architecture.
+You can experiment with other pre-trained language models to complete the tasks.
+
+Caption Generation
+To generate image captions, we employ the ClipCap model, which facilitates caption generation. Ensure the model weights are downloaded from Hugging Face and placed in the models/ directory.
+
+Multimodal Feature Extraction
+For multimodal feature extraction, we leverage the MaPLe model, a CLIP-based enhanced model. You may also choose to use alternative multimodal models to achieve this functionality.
 
 >**Original links**
 >
@@ -31,7 +46,7 @@ You can download the datasets from the original links below and preprocess the d
 
 
 
-### Quick start
+## Quick start
 
 ```shell
 nohup python -m src.test_model > log/t2015/output_test_few112.log 2>&1 &
@@ -40,6 +55,11 @@ The test results, including accuracy (ACC) and F1 scores, will be saved as .log 
 
 We have provided example results for the datasets MVSA_S and MASAD. Below are sample results for the MVSA_S dataset:
 
-<img src="plots/mvsa_s/mvsa_s.png" alt="Result 1" width="250">
-<img src="plots/mvsa_s/training_loss_few221.png" alt="Result 2" width="250">
+<table>
+  <tr>
+    <td><img src="plots/mvsa_s/mvsa_s.png" alt="Result 1" width="300"></td>
+    <td><img src="plots/mvsa_s/training_loss_few221.png" alt="Result 2" width="300"></td>
+  </tr>
+</table>
+
 
