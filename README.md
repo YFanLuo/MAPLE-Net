@@ -2,10 +2,10 @@
 
 ## Overview
 
-![model architectures](figs/overview.png)
+![model architectures](figs/overview.png) { width=500px }
 
 
-![model architectures](figs/flowchart.png)
+![model architectures](figs/flowchart.png) { width=500px }
 
 The figure shows the architectures of  our MAPLE-Net approaches for MSA tasks. 
 
