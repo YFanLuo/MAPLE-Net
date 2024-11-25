@@ -29,7 +29,6 @@ You can download the datasets from the original links below and preprocess the d
 >
 >TumEmo: [`all_data_id_and_label.txt`](https://pan.baidu.com/s/1O8GmVGCDp_XRftSdEBLghQ) (access code `9hh1`) and [`all_data.zip`](https://pan.baidu.com/s/1F5d1urf67-yaSy-tcsS_4A) (access code `88il`) from https://github.com/YangXiaocui1215/MVAN
 
-The UP models we used can be found [here](https://pan.baidu.com/s/1Pwq0_MPcM7GSsiaCXBFlgg?pwd=hvli).
 
 
 ### Quick start
