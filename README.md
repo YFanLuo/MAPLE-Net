@@ -54,7 +54,7 @@ Alternatively, you may choose to use other multimodal models to achieve this fun
 
 Make sure to download the models and place them in the `models/<model_name>` directory
 
-### Quick start
+## Quick start
 
 ```shell
 nohup python -m src.test_model > log/t2015/output_test_few112.log 2>&1 &
