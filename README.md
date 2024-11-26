@@ -30,7 +30,7 @@ You can download the datasets from the original links below and preprocess the d
 
 ## Prepare the Models
 
-## Pre-trained Language Models
+### Pre-trained Language Models
 
 We provide two versions of prompt templates to accommodate different pre-trained language models:
 
@@ -45,16 +45,16 @@ We provide two versions of prompt templates to accommodate different pre-trained
 - **Other Pre-trained Language Models**  
   You can experiment with alternative pre-trained language models to accomplish the tasks.
 
-## Caption Generation
+### Caption Generation
 To generate image captions, we use the **ClipCap** model from https://github.com/rmokady/CLIP_prefix_caption. 
 
-## Multimodal Feature Extraction
+### Multimodal Feature Extraction
 For multimodal feature extraction, we utilize the **MaPLe model**, an enhanced CLIP-based model, from  https://github.com/muzairkhattak/multimodal-prompt-learning/tree/main.
 Alternatively, you may choose to use other multimodal models to achieve this functionality.
 
 Make sure to download the models and place them in the `models/<model_name>` directory
 
-## Quick start
+### Quick start
 
 ```shell
 nohup python -m src.test_model > log/t2015/output_test_few112.log 2>&1 &
